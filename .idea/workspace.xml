@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="542e927a-0afa-40c6-a96e-1edc938bc78a" name="Default Changelist" comment="" />
+    <list default="true" id="542e927a-0afa-40c6-a96e-1edc938bc78a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +18,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YaDFKua0mIMimbSAhJb0Gpi3QH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +30,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/bin/flask" />
   </component>
   <component name="RunManager">
@@ -73,46 +82,25 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="667" y="311" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583172656179" />
-    <state width="894" height="190" key="GridCell.Tab.0.bottom" timestamp="1583222249250">
+    <state width="904" height="277" key="GridCell.Tab.0.bottom" timestamp="1583225750644">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="894" height="190" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583222249250" />
-    <state width="894" height="190" key="GridCell.Tab.0.center" timestamp="1583222249247">
+    <state width="904" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583225750644" />
+    <state width="904" height="277" key="GridCell.Tab.0.center" timestamp="1583225750643">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="894" height="190" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583222249247" />
-    <state width="894" height="190" key="GridCell.Tab.0.left" timestamp="1583222249246">
+    <state width="904" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583225750643" />
+    <state width="904" height="277" key="GridCell.Tab.0.left" timestamp="1583225750643">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="894" height="190" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583222249246" />
-    <state width="894" height="190" key="GridCell.Tab.0.right" timestamp="1583222249248">
+    <state width="904" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583225750643" />
+    <state width="904" height="277" key="GridCell.Tab.0.right" timestamp="1583225750643">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="894" height="190" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583222249248" />
+    <state width="904" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583225750643" />
     <state x="859" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1583222315070">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="859" y="298" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583222315069" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/__init__.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/__init__.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/__init__.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
