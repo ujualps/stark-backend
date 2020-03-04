@@ -1,4 +1,4 @@
-from flask import request, Flask
+from flask import request, Flask, jsonify
 from app import app, db
 from app.models import User
 from flask_httpauth import HTTPBasicAuth
@@ -16,22 +16,9 @@ def login_method():
 
     user = User.query.filter_by(email=email).first()
     if user.password_hash == password:
-        return str(user.id)
-    else:
-        return "0"
-    # try:
-    #     user = User.query.filter_by(email=email).first()
-    #     if user.password_hash == password:
-    #         return '1'
-    #     else:
-    #         return '2'
-    # finally:
-    #     return email
-
-
-
-
-
+        return_dict = dict()
+        return_dict['id'] = user.id
+        return jsonify(return_dict)
 
 
 @app.route('/users', methods=['POST'])
@@ -49,3 +36,20 @@ def user_methods():
     db.session.commit()
 
     return '200'
+
+
+@app.route('/get_user', methods=['POST'])
+def get_details():
+    response = request.get_json()
+
+    uid = response['userid']
+    user = User.query.filter_by(id=uid).first()
+    return_dict = dict()
+    print(user)
+    return_dict['userid'] = user.id
+    return_dict['username'] = user.username
+    return_dict['designation'] = user.Designation
+    return_dict['email'] = user.email
+    return_dict['dob'] = user.DOB
+
+    return jsonify(return_dict)
