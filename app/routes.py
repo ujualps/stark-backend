@@ -74,3 +74,14 @@ def get_all_posts():
     return jsonify([post.serialize for post in posts])
 
 
+@app.route('/get_posts_by_user', methods=['POST'])
+def get_all_posts_by_user():
+    response = request.get_json()
+    userid = response['userid']
+
+    posts = Posts.query.filter_by(userid=userid)
+    return jsonify([post.serialize for post in posts])
+
+
+
+
