@@ -9,3 +9,11 @@ class User(db.Model):
     Designation = db.Column(db.String(50))
     DOB = db.Column(db.String(50))
     password_hash = db.Column(db.String(128))
+    posts = db.relationship('Posts', backref='users', lazy=True)
+
+
+class Posts(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(50))
+    description = db.Column(db.String(200))
+    userid = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
