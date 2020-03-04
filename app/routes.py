@@ -1,6 +1,6 @@
 from flask import request, Flask, jsonify
 from app import app, db
-from app.models import User
+from app.models import User, Posts
 from flask_httpauth import HTTPBasicAuth
 
 
@@ -53,3 +53,24 @@ def get_details():
     return_dict['dob'] = user.DOB
 
     return jsonify(return_dict)
+
+
+@app.route('/new_post',methods=['POST'])
+def new_post():
+    response = request.get_json()
+
+    uid = response['userid']
+    title = response['title']
+    desc = response['desc']
+    post = Posts(title=title, description=desc, userid=uid)
+    db.session.add(post)
+    db.session.commit()
+    return '200'
+
+
+@app.route('/get_all_posts', methods=['GET'])
+def get_all_posts():
+    posts = Posts.query.all()
+    return jsonify([post.serialize for post in posts])
+
+

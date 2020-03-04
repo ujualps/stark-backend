@@ -17,3 +17,12 @@ class Posts(db.Model):
     title = db.Column(db.String(50))
     description = db.Column(db.String(200))
     userid = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    @property
+    def serialize(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'desc': self.description,
+            'userid': self.userid
+        }
