@@ -71,7 +71,9 @@ def new_post():
 @app.route('/get_all_posts', methods=['GET'])
 def get_all_posts():
     posts = Posts.query.all()
-    return jsonify([post.serialize for post in posts])
+    lst = [post.serialize for post in posts]
+    lst.reverse()
+    return jsonify(lst)
 
 
 @app.route('/get_posts_by_user', methods=['POST'])
@@ -80,7 +82,9 @@ def get_all_posts_by_user():
     userid = response['userid']
 
     posts = Posts.query.filter_by(userid=userid)
-    return jsonify([post.serialize for post in posts])
+    lst = [post.serialize for post in posts]
+    lst.reverse()
+    return jsonify(lst)
 
 
 
