@@ -2,7 +2,7 @@ from flask import request, Flask, jsonify
 from app import app, db
 from app.models import User, Posts
 from flask_httpauth import HTTPBasicAuth
-
+import re
 
 auth = HTTPBasicAuth()
 
@@ -55,7 +55,7 @@ def get_details():
     return jsonify(return_dict)
 
 
-@app.route('/new_post',methods=['POST'])
+@app.route('/new_post', methods=['POST'])
 def new_post():
     response = request.get_json()
 
@@ -86,12 +86,14 @@ def get_all_posts_by_user():
     lst.reverse()
     return jsonify(lst)
 
+
 @app.route('/search_posts', methods=['POST'])
 def search_post():
     response = request.get_json()
-    search_text =response['text']
+    search_text = response['text']
 
     posts = Posts.query.filter(Posts.title.contains(search_text))
+    # posts = Posts.query.filter(re.search(search_text, Posts.title, re.IGNORECASE) is not None)
     lst = [post.serialize for post in posts]
 
     posts = Posts.query.filter(Posts.description.contains(search_text))
@@ -99,15 +101,11 @@ def search_post():
 
     # lst = list(set(lst))
     seen_titles = set()
-    new_lst =[]
+    new_lst = []
     for obj in lst:
         if obj['id'] not in seen_titles:
             new_lst.append(obj)
             seen_titles.add(obj['id'])
 
-    # lst.reverse()
+    new_lst.reverse()
     return jsonify(new_lst)
-
-
-
-
