@@ -86,6 +86,28 @@ def get_all_posts_by_user():
     lst.reverse()
     return jsonify(lst)
 
+@app.route('/search_posts', methods=['POST'])
+def search_post():
+    response = request.get_json()
+    search_text =response['text']
+
+    posts = Posts.query.filter(Posts.title.contains(search_text))
+    lst = [post.serialize for post in posts]
+
+    posts = Posts.query.filter(Posts.description.contains(search_text))
+    lst.extend([post.serialize for post in posts])
+
+    # lst = list(set(lst))
+    seen_titles = set()
+    new_lst =[]
+    for obj in lst:
+        if obj['id'] not in seen_titles:
+            new_lst.append(obj)
+            seen_titles.add(obj['id'])
+
+    # lst.reverse()
+    return jsonify(new_lst)
+
 
 
 
